@@ -11,6 +11,11 @@ import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import '@fontsource/inter/900.css';
 
+if (localStorage.getItem("CURRENT_THEME")){
+
+} else {
+  localStorage.setItem("CURRENT_THEME", "dark")
+}
 
 // Main Theme
 const mainTheme = createTheme({
@@ -21,7 +26,7 @@ const mainTheme = createTheme({
     },
   },
   palette: {
-    mode: 'dark',
+    mode: localStorage.getItem("CURRENT_THEME"),
     primary: {
       500: "#7289DA",
     }

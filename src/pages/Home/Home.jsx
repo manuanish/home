@@ -2,7 +2,6 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import mainTheme from '../../themes/mainTheme';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import * as React from 'react';
 import MenuBar from '../../components/MenuBar';
 import Footer from '../../components/Footer'

@@ -15,7 +15,11 @@ import ListItemText from '@mui/material/ListItemText';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
+import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
+import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import './MenuBar.css';
 
 const drawerWidth = 240;
@@ -25,6 +29,16 @@ export default function MenuBar() {
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  const [alignment, setAlignment] = React.useState(localStorage.getItem('CURRENT_THEME'));
+
+  const handleChange = (event, newAlignment) => {
+    if (newAlignment !== null) {
+      setAlignment(newAlignment);
+      localStorage.setItem('CURRENT_THEME', newAlignment);
+      window.location.reload(false);
+    }
   };
 
   const drawer = (
@@ -73,16 +87,30 @@ export default function MenuBar() {
         <Divider />
       </motion.div>
       <motion.div initial={{opacity: 0, x: -5}} whileInView={{opacity: 1, x: 0}} transition={{delay: 1.2}}>
-      <List>
-        <ListItem button sx={{color: '#7289DA'}}>
-          <ListItemIcon sx={{ml: 1, mr: -2, alignSelf: 'center' }}>
-            <AddRoundedIcon sx={{color: '#7289DA'}}/>
-          </ListItemIcon>
-          <ListItemText>
-            Sign Up
-          </ListItemText>
-        </ListItem>
-      </List>
+        <List>
+          <ListItem button sx={{color: '#7289DA'}}>
+            <ListItemIcon sx={{ml: 1, mr: -2, alignSelf: 'center' }}>
+              <AddRoundedIcon sx={{color: '#7289DA'}}/>
+            </ListItemIcon>
+            <ListItemText>
+              Sign Up
+            </ListItemText>
+          </ListItem>
+        </List>
+      </motion.div>
+      <motion.div initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{delay: 1.4}}>
+        <Divider />
+      </motion.div>
+      <motion.div initial={{opacity: 0, x: -5}} whileInView={{opacity: 1, x: 0}} transition={{delay: 1.6}} style={{margin: 32}}>
+      <ToggleButtonGroup
+        color="primary"
+        value={alignment}
+        exclusive
+        onChange={handleChange}
+      >
+        <ToggleButton value="light"><LightModeRoundedIcon/> &nbsp; Light</ToggleButton>
+        <ToggleButton value="dark"><DarkModeRoundedIcon/> &nbsp; Dark</ToggleButton>
+      </ToggleButtonGroup>
       </motion.div>
     </div>
   );
