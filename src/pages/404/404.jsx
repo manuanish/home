@@ -4,10 +4,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import mainTheme from '../../themes/mainTheme';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import {
  Link
 } from "react-router-dom";
+import MenuBar from '../../components/MenuBar';
+import Footer from '../../components/Footer';
 
 const list = {
   visible: {
@@ -32,11 +34,13 @@ const item = {
 
 function BlankSlate() {
   return (
-    <div style={{padding: 20}}>
+
     <ThemeProvider theme={mainTheme}>
       <CssBaseline />
+      <MenuBar />
+      <div style={{padding: 20}}>
       <motion.ul initial="hidden" animate="visible" variants={list} style={{listStyleType: 'none'}}>
-        <motion.li variants={item}>
+        <motion.li variants={item} className='glitch'>
           <Typography sx={{color: '#7289DA', fontWeight: 900, fontSize: 48}}>
             404
           </Typography>
@@ -52,8 +56,10 @@ function BlankSlate() {
           </Link>
         </motion.li >
       </motion.ul>
+      </div>
+      <Footer />
     </ThemeProvider>
-    </div>
+
   );
 }
 
