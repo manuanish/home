@@ -4,6 +4,8 @@ object-assign
 @license MIT
 */
 
+/*! Copyright Twitter Inc. and other contributors. Licensed under MIT */
+
 /**
  * React Router DOM v6.2.1
  *
