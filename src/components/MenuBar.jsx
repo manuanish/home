@@ -21,6 +21,9 @@ import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import './MenuBar.css';
+import {
+ Link
+} from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -101,7 +104,7 @@ export default function MenuBar() {
       <motion.div initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{delay: 1.4}}>
         <Divider />
       </motion.div>
-      <motion.div initial={{opacity: 0, x: -5}} whileInView={{opacity: 1, x: 0}} transition={{delay: 1.6}} style={{margin: 32}}>
+      <motion.div initial={{opacity: 0, y: 5}} whileInView={{opacity: 1, y: 0}} transition={{delay: 1.6}} style={{margin: 32}}>
       <ToggleButtonGroup
         color="primary"
         value={alignment}
@@ -147,10 +150,12 @@ export default function MenuBar() {
             </Typography>
           </motion.div>
           <motion.div className='menuBarButton' initial={{opacity: 0, y: -5}} animate={{opacity: 1, y: 0}} transition={{ delay: 0.3 }}>
-            <Button variant='outlined'>Log In</Button>
+            <Link to="/log-in" style={{textDecoration: 'none'}}>
+              <Button variant='outlined'>Log In</Button>
+            </Link>
           </motion.div>
           <motion.div className='menuBarButton' initial={{opacity: 0, y: -5}} animate={{opacity: 1, y: 0}} transition={{ delay: 0.4 }} style={{marginLeft: 10}}>
-            <Button variant='contained'>Sign Up</Button>
+            <Button variant='contained' disableElevation>Sign Up</Button>
           </motion.div>
         </Toolbar>
       </div>

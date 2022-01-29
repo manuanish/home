@@ -52,7 +52,7 @@ function BlankSlate() {
         </motion.li >
         <motion.li variants={item}>
           <Link to="/home" style={{textDecoration: 'none'}}>
-            <Button sx={{mt: 4}} variant='contained'>Return Home</Button>
+            <Button sx={{mt: 4}} variant='contained' disableElevation>Return Home</Button>
           </Link>
         </motion.li >
       </motion.ul>
