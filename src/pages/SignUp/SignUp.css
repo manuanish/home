@@ -1,0 +1,36 @@
+.inputHolder{
+  padding-left: calc(100% / 3);
+  padding-right: calc(100% / 3);
+  margin-top: 50px;
+}
+
+@media (max-width: 1000px) {
+  .inputHolder{
+    padding-left: calc(100% / 5);
+    padding-right: calc(100% / 5);
+  }
+}
+
+
+@media (max-width: 600px) {
+  .inputHolder{
+    padding-left: calc(100% / 8);
+    padding-right: calc(100% / 8);
+  }
+}
+
+
+@media (max-width: 500px) {
+  .inputHolder{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .inputHolder{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
