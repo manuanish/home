@@ -11,17 +11,28 @@ import FooterNoAbs from '../../components/FooterNoAbs'
 import { motion } from "framer-motion";
 import Twemoji from '../../scripts/Twemoji';
 import { DiPython, DiHtml5, DiNodejsSmall, DiCss3Full } from "react-icons/di";
-import './Home.css'
+import './Home.css';
 
 
 function Home() {
   return (
+
     <ThemeProvider theme={mainTheme}>
+      <motion.div className='mainBackground' initial={{opacity: 0}} animate={{opacity: 1}} transition={{ delay: 1, duration: 2 }}>
+      </motion.div>
+      <motion.div className='hideBackground' initial={{opacity: 0, y: -10}} animate={{opacity: 1, y: 0}} transition={{ delay: 0, duration: 1 }}>
+      </motion.div>
+      <div className='line1'></div>
+      <div className='line2'></div>
+      <div className='line3'></div>
       <CssBaseline />
       <MenuBar />
+      <div className='mainText'>
         <motion.div initial={{opacity: 0, y: -5}} animate={{opacity: 1, y: 0}} transition={{ delay: 0.8, duration: 0.5 }}>
           <Typography sx={{color: 'text.primary', fontWeight: 800, fontSize: 40, textAlign: 'center', mt: 10}}>
-            Hello There! <Twemoji emoji="👋"/>
+            <div className='titleText'>
+              Hello There! <Twemoji emoji="👋"/>
+            </div>
           </Typography>
         </motion.div>
         <motion.div initial={{opacity: 0, y: -5}} animate={{opacity: 1, y: 0}} transition={{ delay: 1.2 }}>
@@ -29,6 +40,7 @@ function Home() {
             Welcome to my website. <Twemoji emoji=""/>
           </Typography>
         </motion.div>
+      </div>
         <Card sx={{width: '100%', mt: 28, boxShadow: 0, background: 'inherit'}}>
           <motion.div initial={{opacity: 0, y: -5}} animate={{opacity: 1, y: 0}} transition={{ delay: 1.6, duration: 0.5 }}>
             <Typography sx={{color: 'text.primary', fontWeight: 800, fontSize: 30, ml: 5, mb: 4}}>

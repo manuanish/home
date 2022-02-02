@@ -81,14 +81,6 @@ export default function MenuBar() {
 
   const [alignment, setAlignment] = React.useState(localStorage.getItem('CURRENT_THEME'));
 
-  const handleChange = (event, newAlignment) => {
-    if (newAlignment !== null) {
-      setAlignment(newAlignment);
-      localStorage.setItem('CURRENT_THEME', newAlignment);
-      window.location.reload(false);
-    }
-  };
-
   const handleSignOut = async () => {
     await signOut(auth)
   }
@@ -167,15 +159,6 @@ export default function MenuBar() {
         <Divider />
       </motion.div>
       <motion.div initial={{opacity: 0, y: 5}} whileInView={{opacity: 1, y: 0}} transition={{delay: 1.6}} style={{margin: 32}}>
-      <ToggleButtonGroup
-        color="primary"
-        value={alignment}
-        exclusive
-        onChange={handleChange}
-      >
-        <ToggleButton value="light"><LightModeRoundedIcon/> &nbsp; Light</ToggleButton>
-        <ToggleButton value="dark"><DarkModeRoundedIcon/> &nbsp; Dark</ToggleButton>
-      </ToggleButtonGroup>
       </motion.div>
     </div>
   );
@@ -183,7 +166,7 @@ export default function MenuBar() {
   try {
     var isNull = auth.currentUser.emailVerified
     return (
-          <Box sx={{ flexGrow: 1, position: 'static'}}>
+          <Box sx={{ flexGrow: 1, position: 'static'}} className='menuBar'>
             <div style={{backgroundColor: 'inherit'}}>
               <Toolbar>
                 <motion.div initial={{opacity: 0, y: -5}} animate={{opacity: 1, y: 0}} transition={{ delay: 0.1 }}>
@@ -248,7 +231,7 @@ export default function MenuBar() {
         );
   } catch {
     return (
-      <Box sx={{ flexGrow: 1, position: 'static'}}>
+      <Box sx={{ flexGrow: 1, position: 'static'}} className='menuBar'>
         <div style={{backgroundColor: 'inherit'}}>
           <Toolbar>
             <motion.div initial={{opacity: 0, y: -5}} animate={{opacity: 1, y: 0}} transition={{ delay: 0.1 }}>
