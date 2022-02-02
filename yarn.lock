@@ -7913,6 +7913,11 @@ react-firebase-hooks@^5.0.0:
   resolved "https://registry.yarnpkg.com/react-firebase-hooks/-/react-firebase-hooks-5.0.0.tgz#039acec4647a105f3d31940cc7078836246fd7b4"
   integrity sha512-kfsUCAQTE4vHVaSKFA4WDTo0bC3keLTVccLha3m0CW7MnW2L4U7RCiHc5F8YY5H0X9eRsS86zzzkW1SvGBgwMg==
 
+react-icons@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.3.1.tgz#2fa92aebbbc71f43d2db2ed1aed07361124e91ca"
+  integrity sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ==
+
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"

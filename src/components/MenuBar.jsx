@@ -37,7 +37,6 @@ import {
 
 const auth = getAuth();
 
-const CURRENT_USER = null
 
 
 
@@ -122,46 +121,46 @@ export default function MenuBar() {
         <Divider />
       </motion.div>
       <List>
-        <ListItem button>
-          <motion.div style={{display: 'flex'}} initial={{ opacity: 0, x: -5 }} whileInView={{ opacity: 1, x: 0 }} transition={{delay: 0.6}}>
-            <ListItemIcon sx={{ml: 1, mr: -2, alignSelf: 'center' }}>
-              <HomeRoundedIcon />
-            </ListItemIcon>
-            <ListItemText>
-              <Link to='/home' style={{textDecoration: 'none', color: 'inherit'}}>
+        <Link to='/home' style={{textDecoration: 'none', color: 'inherit'}}>
+          <ListItem button>
+            <motion.div style={{display: 'flex'}} initial={{ opacity: 0, x: -5 }} whileInView={{ opacity: 1, x: 0 }} transition={{delay: 0.6}}>
+              <ListItemIcon sx={{ml: 1, mr: -2, alignSelf: 'center' }}>
+                <HomeRoundedIcon />
+              </ListItemIcon>
+              <ListItemText>
                 Home
-              </Link>
-            </ListItemText>
-          </motion.div>
-        </ListItem>
-        <ListItem button>
-          <motion.div style={{display: 'flex'}} initial={{ opacity: 0, x: -5 }} whileInView={{ opacity: 1, x: 0 }} transition={{delay: 0.8}}>
-            <ListItemIcon sx={{ml: 1, mr: -2, alignSelf: 'center' }}>
-              <LoginRoundedIcon />
-            </ListItemIcon>
-            <ListItemText>
-              <Link to="/log-in" style={{textDecoration: 'none', color: 'inherit'}}>
+              </ListItemText>
+            </motion.div>
+          </ListItem>
+        </Link>
+        <Link to="/log-in" style={{textDecoration: 'none', color: 'inherit'}}>
+          <ListItem button>
+            <motion.div style={{display: 'flex'}} initial={{ opacity: 0, x: -5 }} whileInView={{ opacity: 1, x: 0 }} transition={{delay: 0.8}}>
+              <ListItemIcon sx={{ml: 1, mr: -2, alignSelf: 'center' }}>
+                <LoginRoundedIcon />
+              </ListItemIcon>
+              <ListItemText>
                 Log in
-              </Link>
-            </ListItemText>
-          </motion.div>
-        </ListItem>
+              </ListItemText>
+            </motion.div>
+          </ListItem>
+        </Link>
       </List>
       <motion.div initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{delay: 1}}>
         <Divider />
       </motion.div>
       <motion.div initial={{opacity: 0, x: -5}} whileInView={{opacity: 1, x: 0}} transition={{delay: 1.2}}>
         <List>
-          <ListItem button sx={{color: '#7289DA'}}>
-            <ListItemIcon sx={{ml: 1, mr: -2, alignSelf: 'center' }}>
-              <AddRoundedIcon sx={{color: '#7289DA'}}/>
-            </ListItemIcon>
-            <ListItemText>
-              <Link to="/sign-up" style={{textDecoration: 'none', color: '#7289DA'}}>
+          <Link to="/sign-up" style={{textDecoration: 'none', color: '#7289DA'}}>
+            <ListItem button sx={{color: '#7289DA'}}>
+              <ListItemIcon sx={{ml: 1, mr: -2, alignSelf: 'center' }}>
+                <AddRoundedIcon sx={{color: '#7289DA'}}/>
+              </ListItemIcon>
+              <ListItemText>
                 Sign Up
-              </Link>
-            </ListItemText>
-          </ListItem>
+              </ListItemText>
+            </ListItem>
+          </Link>
         </List>
       </motion.div>
       <motion.div initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{delay: 1.4}}>
