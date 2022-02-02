@@ -22,17 +22,17 @@ function Home() {
       </motion.div>
       <motion.div className='hideBackground' initial={{opacity: 0, y: -10}} animate={{opacity: 1, y: 0}} transition={{ delay: 0, duration: 1 }}>
       </motion.div>
-      <div className='line1'></div>
-      <div className='line2'></div>
-      <div className='line3'></div>
+      <motion.div initial={{opacity: 0}} animate={{opacity: 0.2}} transition={{ delay: 2, duration: 1 }} className='line1'></motion.div>
+      <motion.div initial={{opacity: 0}} animate={{opacity: 0.4}} transition={{ delay: 2.5, duration: 1 }} className='line2'></motion.div>
+      <motion.div initial={{opacity: 0}} animate={{opacity: 0.3}} transition={{ delay: 3, duration: 1 }} className='line3'></motion.div>
       <CssBaseline />
       <MenuBar />
       <div className='mainText'>
         <motion.div initial={{opacity: 0, y: -5}} animate={{opacity: 1, y: 0}} transition={{ delay: 0.8, duration: 0.5 }}>
-          <Typography sx={{color: 'text.primary', fontWeight: 800, fontSize: 40, textAlign: 'center', mt: 10}}>
-            <div className='titleText'>
+          <Typography component='div' sx={{color: 'text.primary', fontWeight: 800, fontSize: 40, textAlign: 'center', mt: 10}}>
+            <p className='titleText'>
               Hello There! <Twemoji emoji="👋"/>
-            </div>
+            </p>
           </Typography>
         </motion.div>
         <motion.div initial={{opacity: 0, y: -5}} animate={{opacity: 1, y: 0}} transition={{ delay: 1.2 }}>
